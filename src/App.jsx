@@ -5,7 +5,6 @@ import './App.css';
 import './index.css';
 import Navbar from './components/Navbar.jsx';
 import Landing from './FigmaDesign/Landing';
-import Appbar from './FigmaDesign/Appbar'
 import API_Dashboard from './components/API_Dashboard';
 import UserImage from './components/UserImage';
 import Add_NewImage from './components/Add_NewImage';
@@ -21,10 +20,10 @@ function App() {
           <Navbar />
           <Routes>
             <Route path='/' element={<Landing/>}/>
-            <Route path="/Add-Image" element={<Add_NewImage />} />
-            <Route path="/Api-dashboard" element={<API_Dashboard />} />
-            <Route path="/User-Image" element={<UserImage />} />
-            <Route path="/Update-Delete" element={<Update_Delete />} />
+            <Route path="/add-image" element={<Add_NewImage />} />
+            <Route path="/api-dashboard" element={<API_Dashboard />} />
+            <Route path="/user-image" element={<UserImage />} />
+            <Route path="/update-delete" element={<Update_Delete />} />
           </Routes>
         </Router>
       </>
