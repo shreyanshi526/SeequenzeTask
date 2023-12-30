@@ -15,7 +15,7 @@ const Update_Delete = () => {
   const cardId =  useRecoilValue(cardIdState) || storedCardId;
 
   const handleclose = () => {
-    navigate('/user-image')
+    navigate('/')
   }
 
   useEffect(() => {
@@ -23,7 +23,7 @@ const Update_Delete = () => {
       try {
         if (!cardId) {
           // If cardId is not available, navigate back to User-Image
-          navigate('/user-image');
+          navigate('/');
           return;
         }
 
@@ -51,8 +51,8 @@ const Update_Delete = () => {
       if (response.data.updatedCard) {
         console.log('Card successfully updated:', response.data.updatedCard);
         setEditMode(false); // Exit edit mode after update
-        // Navigate back to '/user-image'
-        navigate('/user-image');
+        // Navigate back to '/'
+        navigate('/');
         // Clear stored cardId
         sessionStorage.removeItem('storedCardId');
       } else {
@@ -74,8 +74,8 @@ const Update_Delete = () => {
 
         if (response.data.message === 'Card successfully deleted') {
           console.log('Card successfully deleted:', response.data.message);
-          // After deletion, navigate back to '/user-image'
-          navigate('/user-image');
+          // After deletion, navigate back to '/'
+          navigate('/');
           // Clear stored cardId
           sessionStorage.removeItem('storedCardId');
         } else {
