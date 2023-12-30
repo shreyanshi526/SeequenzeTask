@@ -22,7 +22,7 @@ const API_Dashboard = () => {
     }, []);
 
     const handleCloseClick = () => {
-        navigate('/user-image');
+        navigate('/');
     };
 
     return (
