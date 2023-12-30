@@ -18,7 +18,7 @@ const UserImage = () => {
         navigate('/api-dashboard');
     }
     const handleFigmaClick =()=>{
-        navigate('/');
+        navigate('/figmadesign');
     }
 
     const handleImageClick = (selectedCardId) => {
