@@ -4,6 +4,8 @@ import orangeImage from '../assets/orange-image.jpg'
 import blackCancel from '../assets/black-cancel.png'
 
 
+
+
 const Add_NewImage = () => {
     const navigate = useNavigate();
     const [formData, setFormData] = useState({

@@ -5,7 +5,6 @@ import './App.css';
 import './index.css';
 import Navbar from './components/Navbar.jsx';
 import Landing from './FigmaDesign/Landing';
-import Appbar from './FigmaDesign/Appbar'
 import API_Dashboard from './components/API_Dashboard';
 import UserImage from './components/UserImage';
 import Add_NewImage from './components/Add_NewImage';
