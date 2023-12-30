@@ -11,11 +11,11 @@ const UserImage = () => {
     const navigate = useNavigate();
 
     const handleCreateClick = () => {
-        navigate('/Add-Image');
+        navigate('/add-image');
     };
 
     const handleAPInavigateClick =()=>{
-        navigate('/Api-dashboard');
+        navigate('/api-dashboard');
     }
     const handleFigmaClick =()=>{
         navigate('/');
@@ -23,7 +23,7 @@ const UserImage = () => {
 
     const handleImageClick = (selectedCardId) => {
         setCardId(selectedCardId); // Set Recoil state
-        navigate(`/Update-Delete`);
+        navigate(`/update-delete`);
     };
 
     useEffect(() => {
