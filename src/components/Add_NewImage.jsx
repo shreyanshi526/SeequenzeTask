@@ -22,7 +22,7 @@ const Add_NewImage = () => {
     };
 
     const handleclose = () => {
-        navigate('/User-Image')
+        navigate('/user-image')
     }
 
 
@@ -49,7 +49,7 @@ const Add_NewImage = () => {
             if (response.ok) {
                 const savedPost = await response.json();
                 console.log('New card created:', savedPost);
-                navigate('/User-Image'); // Navigate to the User-Image route after successful creation
+                navigate('/user-image'); // Navigate to the User-Image route after successful creation
             } else {
                 console.error('Failed to create new card');
             }
