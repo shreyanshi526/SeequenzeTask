@@ -58,7 +58,7 @@ const Add_NewImage = () => {
 
     return (
         <>
-            <div className='w-full h-full bg-bg-grey '>
+            <div className='w-full h-full bg-bg-grey'>
 
                 <div className='block md:hidden lg:hidden hidden:xl hidden:2xl w-full h-full  bg-bg-grey'>
                     <div className='w-full h-full  bg-bg-grey'>
@@ -136,10 +136,10 @@ const Add_NewImage = () => {
                     <div className=''>
                         <div className="h-14"></div>
                         <div className='flex rounded-tr-full md:flex-row xl:flex-row 2xl:flex-row bg-white w-full md:max-w-3xl lg:max-w-4xl xl:max-w-5xl 2xl:max-w-6xl mx-auto'>
-                            <div className='w-[50%] bg-bg-grey '>
+                            <div className='w-[50%] bg-bg-grey overflow-hidden rounded-tr-[42%]'>
                                 <img className='object-cover h-full rounded-bl-full ' src={orangeImage} alt="Orange" />
                             </div>
-                            <div className=' px-4 md:pl-10 md:pr-4 lg:pl-10 lg:pr-4 xl:pl-10 xl:pr-4 2xl:pl-10 2xl:pr-4'>
+                            <div className='overflow-auto px-4 md:pl-10 md:pr-4 lg:pl-10 lg:pr-4 xl:pl-10 xl:pr-4 2xl:pl-10 2xl:pr-4'>
                                 <form onSubmit={handleSubmit} className="max-w-md mx-auto p-4">
                                     <img src={blackCancel} onClick={handleclose} className='w-5 h-5 ml-[100%] -mt-2'></img>
                                     <h2 className="text-2xl font-bold mb-4">Add Image</h2>
