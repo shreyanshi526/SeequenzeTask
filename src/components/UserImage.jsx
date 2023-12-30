@@ -11,8 +11,15 @@ const UserImage = () => {
     const navigate = useNavigate();
 
     const handleCreateClick = () => {
-        navigate('/Create');
+        navigate('/Add-Image');
     };
+
+    const handleAPInavigateClick =()=>{
+        navigate('/Api-dashboard');
+    }
+    const handleFigmaClick =()=>{
+        navigate('/');
+    }
 
     const handleImageClick = (selectedCardId) => {
         setCardId(selectedCardId); // Set Recoil state
@@ -40,9 +47,13 @@ const UserImage = () => {
                 <Left_Navbar className='flex-nowarp' />
 
                 {/* body content */}
-                <div className='ml-5 h-full md:h-full lg:h-screen xl:h-screen bg-bg-grey'>
-                    <div className="text-black text-4xl mt-5 ml-3 font-work-sans leading-10 tracking-wide">Photos from User</div>
-                    <button onClick={handleCreateClick} className='ml-3 mt-6 mb-6 bg-white pl-2 pr-2 pt-1 pb-1 text-md font-work-sans border-1 border-black rounded-2xl items-center'> + Image</button>
+                <div className='ml-5 h-full md:h-full lg:h-full xl:h-full 2xl:h-full bg-bg-grey'>
+                    <div className="text-black text-4xl mt-5 mb-2 ml-3 font-work-sans leading-10 tracking-wide">Photos from User</div>
+                    <button onClick={handleCreateClick} className='ml-3 mt-2 mb-6 bg-white pl-2 pr-2 pt-1 pb-1 text-md font-work-sans border-1 border-black rounded-2xl items-center'> + Image</button>
+                    <button onClick={handleAPInavigateClick} className='ml-3 mt-2 mb-6 bg-white pl-2 pr-2 pt-1 pb-1 text-md font-work-sans border-1 border-black rounded-2xl items-center'>API Image</button>
+                    <button onClick={handleFigmaClick} className='ml-3 mt-2 mb-6 bg-white pl-2 pr-2 pt-1 pb-1 text-md font-work-sans border-1 border-black rounded-2xl items-center'>Figma Design</button>
+                    
+                    
                     <div className="flex-col grid sm:grid-cols-2 lg:grid-cols-3 sm:gap-5 sm:mb-3 justify-center items-center w-full ">
                         {cards.map((card) => (
                             <div key={card._id} className="w-full sm:w-52 md:w-72 lg:w-auto p-2">

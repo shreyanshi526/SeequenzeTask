@@ -1,9 +1,12 @@
 import React, { useState, useEffect } from 'react';
+import { useNavigate } from "react-router-dom";
 import axios from 'axios';
 import Left_Navbar from './Left_Navbar'
 
+
 const API_Dashboard = () => {
     const [photos, setPhotos] = useState([]);
+    const navigate = useNavigate();
 
     useEffect(() => {
         const fetchData = async () => {
@@ -17,13 +20,18 @@ const API_Dashboard = () => {
 
         fetchData();
     }, []);
+
+    const handleCloseClick = () => {
+        navigate('/User-Image');
+    };
+
     return (
         <>
             <div className="flex w-full h-full bg-bg-grey">
                 <Left_Navbar className='flex-nowarp' />
                 <div className='ml-5'>
                     <div className="text-black text-4xl mt-3 ml-3 font-work-sans leading-10 tracking-wide">Photos from Picsum API</div>
-
+                    <button onClick={handleCloseClick} className='ml-3 mt-6 mb-6 bg-white pl-2 pr-2 pt-1 pb-1 text-md font-work-sans border-1 border-black rounded-2xl items-center'>User Image</button>
                     <div className="  flex-col grid sm:grid-cols-2 lg:grid-cols-3 sm:gap-5 sm:mb-3 justify-center items-center  w-full" >
                         {photos.map((photo) => (
                             <div key={photo.id} className="  w-full sm:w-52 md:w-72 lg:w-auto p-2">

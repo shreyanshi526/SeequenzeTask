@@ -20,7 +20,7 @@ const Add_NewImage = () => {
     };
 
     const handleclose = () => {
-        navigate('/User_Image')
+        navigate('/User-Image')
     }
 
 
@@ -28,7 +28,7 @@ const Add_NewImage = () => {
         e.preventDefault();
 
         // Check if imgurl and title are provided
-        if (!formData.imgurl || !formData.title) {
+        if (!formData.imgurl || !formData.title || !formData.author) {
             // Display an error message or prevent submission
             console.error('Please provide both imgurl and title.');
             return;
@@ -47,7 +47,7 @@ const Add_NewImage = () => {
             if (response.ok) {
                 const savedPost = await response.json();
                 console.log('New card created:', savedPost);
-                navigate('/User_Image'); // Navigate to the User_Image route after successful creation
+                navigate('/User-Image'); // Navigate to the User-Image route after successful creation
             } else {
                 console.error('Failed to create new card');
             }
@@ -63,9 +63,9 @@ const Add_NewImage = () => {
                 <div className='block md:hidden lg:hidden hidden:xl hidden:2xl w-full h-full  bg-bg-grey'>
                     <div className='w-full h-full  bg-bg-grey'>
                         <div className='hidden mg:block mg:h-6 '></div>
-                        <form onSubmit={handleSubmit} className=" w-11/12  mg:max-w-md mx-auto p-8 shadow-2xl rounded-lg  bg-white ">
+                        <form onSubmit={handleSubmit} className=" w-11/12 relative  flex flex-col mg:max-w-md mx-auto p-8 shadow-2xl rounded-lg  bg-white ">
 
-                            <img src={blackCancel} onClick={handleclose} className='w-5 h-5 ml-96 -mt-5'></img>
+                            <img src={blackCancel} onClick={handleclose} className='w-5 h-5 self-end  -mt-5'></img>
                             <h2 className="text-2xl font-bold mb-4">Add Image</h2>
                             <label className="block mb-4">
                                 <p className='font-work-sans mb-2'>Image URL:</p>
@@ -118,7 +118,7 @@ const Add_NewImage = () => {
                                     className="form-input mt-1 block w-full h-9 rounded-md border-[1px] border-[#FA782F66]"
                                 />
                             </label>
-                            <div className="flex justify-between mt-12">
+                            <div className="flex justify-between mt-8">
                                 <button type="submit" className="bg-Bg-orange text-white px-4 py-2 rounded  hover:bg-white hover:text-black hover:border-[2px] hover:border-[#FA782F66]">
                                     Create New Card
                                 </button>

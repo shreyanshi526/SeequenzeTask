@@ -20,10 +20,10 @@ function App() {
         <Router>
           <Navbar />
           <Routes>
-            <Route path='/FigmaDesign' element={<Landing/>}/>
-            <Route path="/Create" element={<Add_NewImage />} />
-            <Route path="/" element={<API_Dashboard />} />
-            <Route path="/User_Image" element={<UserImage />} />
+            <Route path='/' element={<Landing/>}/>
+            <Route path="/Add-Image" element={<Add_NewImage />} />
+            <Route path="/Api-dashboard" element={<API_Dashboard />} />
+            <Route path="/User-Image" element={<UserImage />} />
             <Route path="/Update-Delete" element={<Update_Delete />} />
           </Routes>
         </Router>

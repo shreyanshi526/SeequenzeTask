@@ -3,6 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
 import { useRecoilValue } from 'recoil';
 import { cardIdState } from '../recoilState.jsx';
+import blackCancel from '../assets/black-cancel.png'
 
 const Update_Delete = () => {
   const navigate = useNavigate();
@@ -11,14 +12,18 @@ const Update_Delete = () => {
 
   // Retrieve cardId from session storage on component mount
   const storedCardId = sessionStorage.getItem('storedCardId');
-  const cardId = storedCardId || useRecoilValue(cardIdState);
+  const cardId =  useRecoilValue(cardIdState) || storedCardId;
+
+  const handleclose = () => {
+    navigate('/User-Image')
+  }
 
   useEffect(() => {
     const fetchCardDetails = async () => {
       try {
         if (!cardId) {
-          // If cardId is not available, navigate back to User_Image
-          navigate('/User_Image');
+          // If cardId is not available, navigate back to User-Image
+          navigate('/User-Image');
           return;
         }
 
@@ -46,8 +51,8 @@ const Update_Delete = () => {
       if (response.data.updatedCard) {
         console.log('Card successfully updated:', response.data.updatedCard);
         setEditMode(false); // Exit edit mode after update
-        // Navigate back to '/User_Image'
-        navigate('/User_Image');
+        // Navigate back to '/User-Image'
+        navigate('/User-Image');
         // Clear stored cardId
         sessionStorage.removeItem('storedCardId');
       } else {
@@ -69,8 +74,8 @@ const Update_Delete = () => {
 
         if (response.data.message === 'Card successfully deleted') {
           console.log('Card successfully deleted:', response.data.message);
-          // After deletion, navigate back to '/User_Image'
-          navigate('/User_Image');
+          // After deletion, navigate back to '/User-Image'
+          navigate('/User-Image');
           // Clear stored cardId
           sessionStorage.removeItem('storedCardId');
         } else {
@@ -115,10 +120,11 @@ const Update_Delete = () => {
 
   return (
     <>
-      <div className='w-full h-screen bg-bg-grey'>
+      <div className='w-full h-full bg-bg-grey'>
         <div className="max-w-md mx-auto p-4  ">
           {card ? (
-            <div className="bg-white rounded-md shadow-xl p-6 mt-9 ">
+            <div className="bg-white rounded-md shadow-xl p-6 mt-9 flex flex-col ">
+              <img src={blackCancel} onClick={handleclose} className='w-5 h-5 self-end -mt-3'></img>
               <h2 className="text-2xl font-bold mb-4">Update & Delete</h2>
               {renderField('Image URL', card.imgurl, 'imgurl')}
               {renderField('Title', card.title, 'title')}
